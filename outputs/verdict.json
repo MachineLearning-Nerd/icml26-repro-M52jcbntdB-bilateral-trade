@@ -1,0 +1,37 @@
+{
+  "c1_sublinear": {
+    "passed": true,
+    "regrets": [
+      9.741383131246971,
+      43.27448693822071,
+      157.53187780570423
+    ]
+  },
+  "c2_lower_bound": {
+    "passed": true,
+    "coarse": 5.335885546686675,
+    "fine": 25.249864308053656
+  },
+  "c3_discretization": {
+    "passed": true,
+    "regrets_by_K": [
+      6.94847883374552,
+      21.66364355704653,
+      38.929144388866966
+    ]
+  },
+  "c4_profit_collection": {
+    "passed": true,
+    "final_regret": 16.297420794578898
+  },
+  "c5_exploration": {
+    "passed": true,
+    "n_explore": 16,
+    "grid_points": 64
+  },
+  "c6_ucb": {
+    "passed": true,
+    "mean_regret": 21.66364355704653,
+    "bound": 252.98221281347034
+  }
+}

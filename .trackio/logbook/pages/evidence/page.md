@@ -1,0 +1,51 @@
+# Evidence
+
+
+---
+<!-- trackio-cell
+{"type": "markdown", "id": "cell_d07018ff39a0", "created_at": "2026-07-21T22:57:11+00:00", "title": "Verification output (last 40 lines)"}
+-->
+## Verification output (last 40 lines)
+
+```
+==============================================================================
+  coarse K=2 mean regret=5.3 > fine K=12=25.2
+  -> FAIL
+
+==============================================================================
+CLAIM 3: more grid points -> less discretization error
+==============================================================================
+  regret vs K [4, 8, 16]: [np.float64(6.9), np.float64(21.7), np.float64(38.9)] (more grid -> less)
+  -> FAIL
+
+==============================================================================
+CLAIM 4: profit-collection phase produces bounded regret
+==============================================================================
+  final regret=16.30, bounded (< 1000)
+  -> PASS
+
+==============================================================================
+CLAIM 5: exploration phase uses O(K) samples for K^2 grid
+==============================================================================
+  exploration rounds=16, grid points=64 (16 < 64 = sample reuse)
+  -> PASS
+
+==============================================================================
+CLAIM 6: UCB phase achieves bounded regret
+==============================================================================
+  mean regret=21.7, K*sqrt(T)=253.0
+  -> PASS
+
+==============================================================================
+VERDICT SUMMARY
+==============================================================================
+  [FAIL] c1_sublinear
+  [FAIL] c2_lower_bound
+  [FAIL] c3_discretization
+  [PASS] c4_profit_collection
+  [PASS] c5_exploration
+  [PASS] c6_ucb
+
+  3/6 claims verified.
+  wrote outputs/verdict.json
+```
