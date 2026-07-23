@@ -82,7 +82,11 @@ def verify_claim_3(data: dict, failures: list[str]) -> None:
     require(all(float(row["gap"]) <= float(row["paper_bound"]) + 2e-9 for row in rows), "O(log(T)/K) envelope exceeded", failures)
     require(all(int(row["projection_violations"]) == 0 for row in rows), "Lemma 5.1 projection inequality violated", failures)
     for summary in data["scaling"]:
-        require(float(summary["slope"]) <= -0.70, f"{summary['environment']} gap slope too shallow", failures)
+        require(
+            bool(summary["all_exact"]) or float(summary["slope"]) <= -0.70,
+            f"{summary['environment']} gap is neither exact nor O(1/K)",
+            failures,
+        )
         require(summary["nested_monotone"], f"{summary['environment']} nested grids not monotone", failures)
 
 

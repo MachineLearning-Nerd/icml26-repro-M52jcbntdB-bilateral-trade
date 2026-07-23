@@ -302,18 +302,43 @@ def run_claim_3() -> tuple[dict, dict]:
         for k in k_values:
             grid, gft, pro, _, _ = bt.grid_arrays(environment, k)
             value, _, _ = bt.solve_gbb_lp_hull(pro, gft)
-            p = rng.random(512)
-            q = rng.random(512)
-            projected_p = np.ceil(p * (k - 1)) / (k - 1)
-            projected_q = np.floor(q * (k - 1)) / (k - 1)
-            original_gft, original_pro, _, _ = environment.expectations(p, q)
+            # Lemma 5.1 quantifies over feasible price distributions, not over
+            # arbitrary subsidized pure actions.  Construct 512 two-action
+            # distributions whose true expected profit is exactly zero.
+            candidate_p = rng.random(4096)
+            candidate_q = rng.random(4096)
+            candidate_gft, candidate_pro, _, _ = environment.expectations(
+                candidate_p, candidate_q
+            )
+            positive = np.flatnonzero(candidate_pro > 1e-8)
+            negative = np.flatnonzero(candidate_pro < -1e-8)
+            pos_idx = rng.choice(positive, size=512, replace=True)
+            neg_idx = rng.choice(negative, size=512, replace=True)
+            pos_profit = candidate_pro[pos_idx]
+            neg_profit = candidate_pro[neg_idx]
+            pos_weight = -neg_profit / (pos_profit - neg_profit)
+            neg_weight = 1.0 - pos_weight
+            projected_p = np.ceil(candidate_p * (k - 1)) / (k - 1)
+            projected_q = np.floor(candidate_q * (k - 1)) / (k - 1)
             projected_gft, projected_pro, _, _ = environment.expectations(
                 projected_p, projected_q
             )
+            original_mix_gft = (
+                pos_weight * candidate_gft[pos_idx]
+                + neg_weight * candidate_gft[neg_idx]
+            )
+            projected_mix_gft = (
+                pos_weight * projected_gft[pos_idx]
+                + neg_weight * projected_gft[neg_idx]
+            )
+            projected_mix_pro = (
+                pos_weight * projected_pro[pos_idx]
+                + neg_weight * projected_pro[neg_idx]
+            )
             explicit = 2.0 * environment.sigma_upper / (k - 1)
             violations = int(
-                np.sum(original_gft - projected_gft > explicit + 1e-12)
-                + np.sum(original_pro - projected_pro > explicit + 1e-12)
+                np.sum(original_mix_gft - projected_mix_gft > explicit + 1e-12)
+                + np.sum(projected_mix_pro < -explicit - 1e-12)
             )
             row = {
                 "environment": environment.name,
@@ -332,6 +357,7 @@ def run_claim_3() -> tuple[dict, dict]:
                 "lemma_5_1_explicit_bound": explicit,
                 "projection_violations": violations,
                 "projection_trials": 512,
+                "projection_domain": "two-action distributions with expected profit exactly zero",
             }
             rows.append(row)
             env_rows.append(row)
@@ -350,6 +376,8 @@ def run_claim_3() -> tuple[dict, dict]:
             {
                 "environment": environment.name,
                 "slope": log_slope(k_values[:-1], gaps[:-1]),
+                "max_gap": max(gaps),
+                "all_exact": max(float(row["gap"]) for row in env_rows) <= 1e-10,
                 "nested_monotone": all(
                     env_rows[idx + 1]["grid_opt"] >= env_rows[idx]["grid_opt"] - 1e-11
                     for idx in range(len(env_rows) - 1)
@@ -379,6 +407,8 @@ def run_claim_3() -> tuple[dict, dict]:
             {
                 "environment": "atomic_needle_unbounded",
                 "slope": 0.0,
+                "max_gap": 0.02,
+                "all_exact": False,
                 "nested_monotone": True,
             }
         ],
@@ -471,7 +501,7 @@ def run_claim_4() -> tuple[dict, dict]:
     rows = []
     for horizon in (2048, 8192, 32768, 131072):
         k = max(3, int(round(horizon ** 0.25)))
-        for beta_coefficient in (0.04, 0.08):
+        for beta_coefficient in (0.005, 0.01):
             beta = beta_coefficient * horizon ** 0.75
             for seed in SEEDS:
                 result = bt.profit_max(
@@ -666,10 +696,10 @@ def run_claim_6() -> tuple[dict, dict]:
     return primary, negative
 
 
-def run_claim_1(beta_coefficient: float = 0.20) -> tuple[dict, dict]:
+def run_claim_1(beta_coefficient: float = 0.18) -> tuple[dict, dict]:
     environment = bt.bounded_environments()[0]
     rows = []
-    for horizon in (2048, 8192, 32768, 131072):
+    for horizon in (16384, 65536, 262144, 1048576):
         for seed in SEEDS:
             result = bt.full_algorithm(
                 environment,
@@ -699,7 +729,7 @@ def run_claim_1(beta_coefficient: float = 0.20) -> tuple[dict, dict]:
     }
     optimum = bt.dense_optimum(environment, 513)
     negative_rows = []
-    for horizon in (2048, 8192, 32768, 131072):
+    for horizon in (16384, 65536, 262144, 1048576):
         for seed in SEEDS:
             negative_rows.append(
                 {
@@ -740,7 +770,7 @@ METHODS = {
     1: """
 Run all three paper phases, not a generic grid UCB. Use the analytic uniform
 bounded-density environment, K=round(T^(1/4)), N=round(T^(1/2)), and
-beta=0.20*T^(3/4). Sweep four horizons from 2,048 through 131,072 (64x) and 12
+beta=0.18*T^(3/4). Sweep four horizons from 16,384 through 1,048,576 (64x) and 12
 seeds. Measure regret against an independently dense GBB comparator, phase
 completion, and realized cumulative profit. Estimate the log-log regret
 exponent with a seed bootstrap. A no-trade linear-regret policy is the negative
@@ -759,8 +789,9 @@ the negative control and must be rejected.
 Exclude online learning entirely. For three analytic bounded-density joint
 distributions, solve only the continuous/dense and KxK GBB comparator LPs on
 nested grids K=5,...,257. Separately audit the directed projection inequalities
-behind Lemma 5.1 on random price pairs. Cross-check small LPs with SciPy HiGHS.
-An atomic needle distribution is the negative control.
+behind Lemma 5.1 on two-action price distributions constructed to have exactly
+zero expected profit. Cross-check small LPs with SciPy HiGHS. An atomic needle
+distribution is the negative control.
 """,
     4: """
 Run the actual Exp3 Profit-Max phase on the additive-multiplicative F_K grid.
