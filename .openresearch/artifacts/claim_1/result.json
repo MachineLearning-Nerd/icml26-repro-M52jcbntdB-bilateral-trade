@@ -1,0 +1,136 @@
+{
+  "appendix_f_terms": [
+    {
+      "denominator": 4,
+      "name": "profit_max_beta",
+      "numerator": 3
+    },
+    {
+      "denominator": 4,
+      "name": "profit_max_T_over_K",
+      "numerator": 3
+    },
+    {
+      "denominator": 8,
+      "name": "profit_max_sqrt_KT",
+      "numerator": 5
+    },
+    {
+      "denominator": 4,
+      "name": "exploration_rounds_NK",
+      "numerator": 3
+    },
+    {
+      "denominator": 4,
+      "name": "discretization_T_over_K",
+      "numerator": 3
+    },
+    {
+      "denominator": 4,
+      "name": "bias_error_T_over_sqrt_N",
+      "numerator": 3
+    },
+    {
+      "denominator": 4,
+      "name": "bandit_K_sqrt_T",
+      "numerator": 3
+    },
+    {
+      "denominator": 4,
+      "name": "budget_exploration_NK",
+      "numerator": 3
+    },
+    {
+      "denominator": 4,
+      "name": "budget_bandit_shortfall",
+      "numerator": 3
+    }
+  ],
+  "blocker": "The exponent algebra composes, but the manuscript does not prove the Profit-Max nontermination case, does not include the promised Lemma 7.2 proof, and does not allocate delta across the two clean events. The finite rollout also never reached phases 2-3.",
+  "claimed_max_exponent": [
+    3,
+    4
+  ],
+  "dependencies": {
+    "3": {
+      "claim": 3,
+      "independent_checker_exit": 0,
+      "negative_control_verifier_exit": 1,
+      "primary_verifier_exit": 0,
+      "runtime_seconds": 2.586343584000133,
+      "verdict": "VERIFIED"
+    },
+    "4": {
+      "claim": 4,
+      "independent_checker_exit": 0,
+      "negative_control_verifier_exit": 1,
+      "primary_verifier_exit": 0,
+      "runtime_seconds": 44.96711158298422,
+      "verdict": "VERIFIED"
+    },
+    "5": {
+      "claim": 5,
+      "independent_checker_exit": 0,
+      "negative_control_verifier_exit": 1,
+      "primary_verifier_exit": 0,
+      "runtime_seconds": 5.907481000002008,
+      "verdict": "VERIFIED"
+    },
+    "6": {
+      "claim": 6,
+      "independent_checker_exit": 0,
+      "negative_control_verifier_exit": 1,
+      "primary_verifier_exit": 0,
+      "runtime_seconds": 779.6401422909694,
+      "verdict": "VERIFIED"
+    }
+  },
+  "finite_regime_diagnostic": {
+    "all_exploration_finished": false,
+    "all_profit_max_stopped": false,
+    "compute": "local CPU",
+    "git_sha": "0dc2a8a6d7239d1732ad1d06ed1c1c38cc06e590",
+    "horizons": [
+      16384,
+      65536,
+      262144,
+      1048576
+    ],
+    "interpretation": "Finite-regime diagnostic only: it blocks empirical verification but does not falsify the asymptotic theorem.",
+    "mean_regret": [
+      782.8877607506435,
+      3144.3323221224123,
+      12065.626961874768,
+      48580.14954552596
+    ],
+    "parent_experiment": "89aa08e0-921c-4a9b-9a67-66bbcb245981",
+    "regret_exponent": 0.9903165085032207,
+    "regret_exponent_ci95": [
+      0.9872548818253305,
+      0.9935171164775024
+    ],
+    "run_id": "9bb95a2e-7f29-42cb-bca4-be27f227d159",
+    "runtime_seconds": 4170.5,
+    "seeds": 12
+  },
+  "honest_outcome": "BLOCKED",
+  "parameter_exponents": {
+    "K": [
+      1,
+      4
+    ],
+    "N": [
+      1,
+      2
+    ],
+    "beta": [
+      3,
+      4
+    ]
+  },
+  "source_obligations": {
+    "confidence_events_allocated_to_total_delta": false,
+    "lemma_7_2_proof_present": false,
+    "profit_max_nontermination_case_proved": false
+  }
+}

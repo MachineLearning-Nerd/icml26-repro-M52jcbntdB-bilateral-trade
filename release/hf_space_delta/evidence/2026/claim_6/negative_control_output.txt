@@ -1,0 +1,7 @@
+exit_code=1
+CLAIM 6 VERIFIER: FAIL
+- T exponent exceeds finite-sample ceiling
+- T exponent CI includes linear growth
+- K exponent exceeds finite-sample ceiling
+- regret exceeds K sqrt(T) envelope
+- profit shortfall exceeds K sqrt(T) envelope

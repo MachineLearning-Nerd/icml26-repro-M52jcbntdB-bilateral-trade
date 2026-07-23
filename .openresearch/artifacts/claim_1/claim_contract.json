@@ -1,0 +1,12 @@
+{
+  "requirements": [
+    "Claims 3, 4, 5, and 6 have VERIFIED dependency gates",
+    "every Appendix-F polynomial term has exponent at most 3/4",
+    "the complementary Profit-Max nontermination case is proved",
+    "the promised proof of Lemma 7.2 is present and checkable",
+    "confidence events are allocated to preserve total failure delta",
+    "the failed finite rollout is retained as a limitation, not a PASS"
+  ],
+  "verdict_if_pass": "VERIFIED",
+  "verdict_if_source_obligations_missing": "BLOCKED"
+}

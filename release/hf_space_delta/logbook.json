@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "title": "Repro - A Stronger Benchmark for Online Bilateral Trade",
+  "emoji": "🎯",
+  "space_id": "DineshAI/M52jcbntdB",
+  "paper": null,
+  "tags": [
+    "icml2026-repro",
+    "paper-M52jcbntdB"
+  ],
+  "updated_at": "2026-07-23T14:47:24+00:00",
+  "root": {
+    "slug": "index",
+    "title": "Repro - A Stronger Benchmark for Online Bilateral Trade",
+    "file": "pages/index.md",
+    "children": [
+      {
+        "slug": "overview",
+        "title": "Overview",
+        "file": "pages/overview/page.md",
+        "children": []
+      },
+      {
+        "slug": "claims",
+        "title": "Claims",
+        "file": "pages/claims/page.md",
+        "children": []
+      },
+      {
+        "slug": "evidence",
+        "title": "Evidence",
+        "file": "pages/evidence/page.md",
+        "children": []
+      },
+      {
+        "slug": "verification-run",
+        "title": "Verification run",
+        "file": "pages/verification-run/page.md",
+        "children": []
+      },
+      {
+        "slug": "conclusion",
+        "title": "Conclusion",
+        "file": "pages/conclusion/page.md",
+        "children": []
+      },
+      {
+        "slug": "claim-by-claim-2026",
+        "title": "2026 Claim-by-claim audit",
+        "file": "pages/2026-campaign/page.md",
+        "children": [
+          {
+            "slug": "claim-1-2026",
+            "title": "Claim 1 — BLOCKED",
+            "file": "pages/2026-campaign/claim-1/page.md",
+            "children": []
+          },
+          {
+            "slug": "claim-2-2026",
+            "title": "Claim 2 — VERIFIED",
+            "file": "pages/2026-campaign/claim-2/page.md",
+            "children": []
+          },
+          {
+            "slug": "claim-3-2026",
+            "title": "Claim 3 — VERIFIED",
+            "file": "pages/2026-campaign/claim-3/page.md",
+            "children": []
+          },
+          {
+            "slug": "claim-4-2026",
+            "title": "Claim 4 — VERIFIED",
+            "file": "pages/2026-campaign/claim-4/page.md",
+            "children": []
+          },
+          {
+            "slug": "claim-5-2026",
+            "title": "Claim 5 — VERIFIED",
+            "file": "pages/2026-campaign/claim-5/page.md",
+            "children": []
+          },
+          {
+            "slug": "claim-6-2026",
+            "title": "Claim 6 — VERIFIED",
+            "file": "pages/2026-campaign/claim-6/page.md",
+            "children": []
+          },
+          {
+            "slug": "release-evidence-2026",
+            "title": "Evidence and release manifest",
+            "file": "pages/2026-campaign/release-evidence/page.md",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  "agent_view_tokens": 1439,
+  "revision": "1784794972269475497"
+}

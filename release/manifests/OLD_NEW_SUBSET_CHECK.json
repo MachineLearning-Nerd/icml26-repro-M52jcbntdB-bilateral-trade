@@ -1,0 +1,16 @@
+{
+  "all_uploads_utf8_text": true,
+  "candidate_path_count": 110,
+  "changed_protected_pages": [],
+  "changed_protected_paths": [
+    "logbook.json"
+  ],
+  "json_valid": true,
+  "logbook_references_valid": true,
+  "missing_protected_paths": [],
+  "protected_logbook_copy": "evidence/2026/protected/logbook_a3bd9c2e315f02cb584c634c58036238f87289f5.json",
+  "protected_path_count": 17,
+  "protected_revision": "a3bd9c2e315f02cb584c634c58036238f87289f5",
+  "secret_pattern_hits": [],
+  "upload_file_count": 94
+}

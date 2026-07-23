@@ -1,0 +1,16 @@
+{
+  "space_id": "DineshAI/M52jcbntdB",
+  "previous_hf_revision": "a3bd9c2e315f02cb584c634c58036238f87289f5",
+  "published_hf_revision": "4c4e95f577956c896d3286ae303237b856f5ae6d",
+  "judge_revision_at_publication": "a3bd9c2e315f02cb584c634c58036238f87289f5",
+  "live_score_at_publication": "2/12",
+  "published_at_utc": "2026-07-23T15:22:42Z",
+  "publication_status": "awaiting_judge",
+  "published_text_file_count": 94,
+  "allowlist_sha256": "f2e736bf91fe82bb0b577d6c04da96f4a8e368557d51502f3fb88d94abb5ff06",
+  "byte_manifest_sha256": "67d125baa73d53e1707061b382869bb4c55d5652771444b7d32ac153647e2249",
+  "published_allowlist_bytes_verified": true,
+  "protected_non_navigation_paths_unchanged": 16,
+  "verbatim_old_logbook_copy_verified": true,
+  "score_increase_claimed": false
+}

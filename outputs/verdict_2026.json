@@ -1,0 +1,47 @@
+{
+  "paper": "arXiv:2602.05681v1",
+  "git_sha": "d171f3cc28c2a117061697e79fc09110008f40ab",
+  "fixed_command": "uv sync --frozen && .venv/bin/python repro/src/verify_bt.py",
+  "compute": "local CPU",
+  "runtime_seconds": 834.8706740829512,
+  "claims": {
+    "1": {
+      "verdict": "BLOCKED",
+      "primary_verifier_exit": 1,
+      "negative_control_verifier_exit": 1,
+      "independent_checker_exit": 0
+    },
+    "2": {
+      "verdict": "VERIFIED",
+      "primary_verifier_exit": 0,
+      "negative_control_verifier_exit": 1,
+      "independent_checker_exit": 0
+    },
+    "3": {
+      "verdict": "VERIFIED",
+      "primary_verifier_exit": 0,
+      "negative_control_verifier_exit": 1,
+      "independent_checker_exit": 0
+    },
+    "4": {
+      "verdict": "VERIFIED",
+      "primary_verifier_exit": 0,
+      "negative_control_verifier_exit": 1,
+      "independent_checker_exit": 0
+    },
+    "5": {
+      "verdict": "VERIFIED",
+      "primary_verifier_exit": 0,
+      "negative_control_verifier_exit": 1,
+      "independent_checker_exit": 0
+    },
+    "6": {
+      "verdict": "VERIFIED",
+      "primary_verifier_exit": 0,
+      "negative_control_verifier_exit": 1,
+      "independent_checker_exit": 0
+    }
+  },
+  "live_score_claimed": false,
+  "published": false
+}

@@ -1,0 +1,69 @@
+{
+  "max_mean_normalized_regret": Infinity,
+  "rows": [
+    {
+      "K": 7,
+      "T": 2048,
+      "beta": 1.5221851072034829,
+      "beta_coefficient": 0.005,
+      "budget": 0.0,
+      "delta": 0.05,
+      "denominator": 1.0,
+      "n_arms": 123,
+      "normalized_regret": 0.03777908442386745,
+      "phase_regret": 2048.0,
+      "seed": 0,
+      "stopped": false,
+      "tau": 312
+    },
+    {
+      "K": 7,
+      "T": 2048,
+      "beta": 1.5221851072034829,
+      "beta_coefficient": 0.005,
+      "budget": 0.0,
+      "delta": 0.05,
+      "denominator": 1.0,
+      "n_arms": 123,
+      "normalized_regret": 0.056953838321507785,
+      "phase_regret": 2048.0,
+      "seed": 1,
+      "stopped": false,
+      "tau": 384
+    },
+    {
+      "K": 7,
+      "T": 2048,
+      "beta": 1.5221851072034829,
+      "beta_coefficient": 0.005,
+      "budget": 0.0,
+      "delta": 0.05,
+      "denominator": 1.0,
+      "n_arms": 123,
+      "normalized_regret": 0.0205296560270018,
+      "phase_regret": 2048.0,
+      "seed": 2,
+      "stopped": false,
+      "tau": 239
+    },
+    {
+      "K": 7,
+      "T": 2048,
+      "beta": 1.5221851072034829,
+      "beta_coefficient": 0.005,
+      "budget": 0.0,
+      "delta": 0.05,
+      "denominator": 1.0,
+      "n_arms": 123,
+      "normalized_regret": 0.024551920152848534,
+      "phase_regret": 2048.0,
+      "seed": 3,
+      "stopped": false,
+      "tau": 197
+    }
+  ],
+  "scaling": {
+    "normalized_slope": 1.0,
+    "regret_slope": 1.0
+  }
+}

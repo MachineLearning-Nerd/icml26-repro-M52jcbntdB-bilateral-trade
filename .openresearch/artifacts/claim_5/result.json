@@ -1,0 +1,46 @@
+{
+  "rows": [
+    {
+      "K": 8,
+      "N": 256,
+      "bound": 0.18265521779042768,
+      "delta": 0.05,
+      "environment": "uniform",
+      "estimated_cells": 64,
+      "failure_count": 0,
+      "failure_probability_ci95_high": 0.023132405251746743,
+      "identity_max_abs_error": 1.1102230246251565e-16,
+      "max_observed_error": 0.096118804664723,
+      "rounds": 4096,
+      "trials": 128
+    },
+    {
+      "K": 16,
+      "N": 512,
+      "bound": 0.13924464250769783,
+      "delta": 0.05,
+      "environment": "uniform",
+      "estimated_cells": 256,
+      "failure_count": 0,
+      "failure_probability_ci95_high": 0.023132405251746743,
+      "identity_max_abs_error": 1.1102230246251565e-16,
+      "max_observed_error": 0.076171875,
+      "rounds": 16384,
+      "trials": 128
+    },
+    {
+      "K": 32,
+      "N": 1024,
+      "bound": 0.10511107610798887,
+      "delta": 0.05,
+      "environment": "uniform",
+      "estimated_cells": 1024,
+      "failure_count": 0,
+      "failure_probability_ci95_high": 0.023132405251746743,
+      "identity_max_abs_error": 1.1102230246251565e-16,
+      "max_observed_error": 0.0644211312770635,
+      "rounds": 65536,
+      "trials": 128
+    }
+  ]
+}

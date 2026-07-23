@@ -1,0 +1,11 @@
+exit_code=1
+Traceback (most recent call last):
+  File "/Users/dineshjinjala/Documents/AllCode/ICMLPapers/OpenSearch/local-runs/5c486d91-dac3-478b-bb5d-84c4ef8400ab/repo/repro/src/claim_verifier.py", line 177, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/Users/dineshjinjala/Documents/AllCode/ICMLPapers/OpenSearch/local-runs/5c486d91-dac3-478b-bb5d-84c4ef8400ab/repo/repro/src/claim_verifier.py", line 166, in main
+    VERIFIERS[args.claim](data, failures)
+  File "/Users/dineshjinjala/Documents/AllCode/ICMLPapers/OpenSearch/local-runs/5c486d91-dac3-478b-bb5d-84c4ef8400ab/repo/repro/src/claim_verifier.py", line 69, in verify_claim_2
+    require(abs(float(data["needle_gft"]) - 0.125) <= 1e-12, "needle GFT is not 1/8", failures)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: float() argument must be a string or a real number, not 'NoneType'

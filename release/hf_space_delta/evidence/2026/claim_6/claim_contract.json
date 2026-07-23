@@ -1,0 +1,9 @@
+{
+  "requirements": [
+    "T sweep spans >=64x through 131072 and >=12 seeds",
+    "regret T exponent <=0.80 with 95% upper endpoint <0.95",
+    "regret K exponent <=1.40",
+    "regret and profit shortfall remain within K sqrt(T log(1/delta)) envelope"
+  ],
+  "verdict_if_pass": "VERIFIED"
+}

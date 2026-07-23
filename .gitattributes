@@ -1,0 +1,4 @@
+# Formal evidence CSVs are byte-preserved RFC 4180 outputs (CRLF records).
+*.csv -text -diff
+# Candidate Space pages are byte-hashed publication inputs; preserve them verbatim.
+release/hf_space_delta/pages/** -text -diff

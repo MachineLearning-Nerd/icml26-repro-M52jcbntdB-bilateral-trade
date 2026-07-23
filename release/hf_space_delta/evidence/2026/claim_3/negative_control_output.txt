@@ -1,0 +1,7 @@
+exit_code=1
+CLAIM 3 VERIFIER: FAIL
+- fewer than three bounded-density environments
+- unbounded instance in primary grid audit
+- O(log(T)/K) envelope exceeded
+- Lemma 5.1 projection inequality violated
+- atomic_needle_unbounded gap is neither exact nor O(1/K)

@@ -1,0 +1,44 @@
+[
+  {
+    "space_id": "DineshAI/M52jcbntdB",
+    "orid": "M52jcbntdB",
+    "paper_title": "A Stronger Benchmark for Online Bilateral Trade: From Fixed Prices to Distributions",
+    "sha": "a3bd9c2e315f02cb584c634c58036238f87289f5",
+    "judged_at": "2026-07-23T11:23:40+00:00",
+    "model": "zai-org/GLM-5.2",
+    "claims": [
+      {
+        "claim": "Under a bounded-density assumption on buyer/seller valuation distributions, the proposed algorithm achieves Õ(T^{3/4}) regret against the best fixed price distribution satisfying Global Budget Balance (GBB) (Theorem 4.1).",
+        "verdict": "toy",
+        "evidence": "Real runs at T=[500, 2000, 8000] with K=8 and 4 seeds produce regret [9.7, 43.3, 157.5], but the check (regret < 0.1*T) is too weak to verify the Õ(T^{3/4}) rate; the growth ratio (16x T yields ~16x regret) appears closer to linear than T^{3/4}."
+      },
+      {
+        "claim": "Without the bounded-density assumption, any algorithm suffers Ω(T) linear regret against the GBB benchmark, shown via a needle-in-the-haystack construction proving discretization is impossible (Theorem 3.1).",
+        "verdict": "inconclusive",
+        "evidence": "The experiment compares coarse K=2 vs fine K=12 grids, both under bounded density, rather than implementing the needle-in-the-haystack construction without the bounded-density assumption that the claim requires; the core lower-bound argument is never tested."
+      },
+      {
+        "claim": "Bounded density lets the learner restrict to a uniform K×K price grid with discretization error O(log(T)/K), showing no separation between one-dimensional SBB learning and two-dimensional GBB distribution learning (Lemma 5.1, Lemma 5.2).",
+        "verdict": "inconclusive",
+        "evidence": "The experiment measures total regret (which includes learning regret √(KT)) rather than isolating discretization error; results show regret increasing with K [6.9, 21.7, 38.9] for K=[4,8,16], which does not directly test the O(log(T)/K) discretization error claim."
+      },
+      {
+        "claim": "In the profit-collection phase, regret is bounded by Õ(β + T/K + √(KT)) where β is the accumulated budget (Lemma 7.1, Lemma 7.2).",
+        "verdict": "inconclusive",
+        "evidence": "The only check is that final regret=16.30 < 1000, which is trivially satisfied and does not verify the specific bound Õ(β + T/K + √(KT)); β is never measured and the scaling with K and T is not tested."
+      },
+      {
+        "claim": "The pure-exploration phase estimates all K² price-pair outcomes using only 2K exploration samples via sample reuse across the observable/non-observable GFT decomposition (Lemma 8.1, Lemma 8.2).",
+        "verdict": "inconclusive",
+        "evidence": "The 'experiment' merely checks the arithmetic fact that 2K=16 < K²=64, without running or validating the actual exploration phase; no estimation accuracy or sample-reuse mechanism is tested."
+      },
+      {
+        "claim": "The UCB-based constrained-bandit optimization phase achieves Õ(K√T) regret while preserving GBB feasibility, combining with the other phases to yield the overall Õ(T^{3/4}) rate (Lemma 9.1, Theorem 4.1).",
+        "verdict": "toy",
+        "evidence": "Real runs show mean regret=21.7 below K*sqrt(T)=253.0 at a single point (K=8, T=1000), but with only one (K,T) configuration the Õ(K√T) scaling is not verified, and the threshold (0.5*K√T) is very loose."
+      }
+    ],
+    "overall": "The logbook provides small-scale numerical runs (T≤8000, 4 seeds, K≤16) with threshold-based pass/fail checks that do not verify the asymptotic rates or structural properties claimed in the paper. Several claims are not meaningfully addressed—Claim 2 lacks the needle-in-the-haystack construction, Claim 5 is an arithmetic fact check, and Claim 3 does not isolate discretization error from learning regret.",
+    "quality": "low"
+  }
+]
