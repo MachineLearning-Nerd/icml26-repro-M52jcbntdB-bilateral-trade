@@ -1,0 +1,10 @@
+exit_code=1
+CLAIM 4 VERIFIER: FAIL
+- need four horizons
+- horizon span below 64x
+- fewer than 12 seeds
+- conditional stop event not met
+- target beta not measured/reached
+- phase regret grows too quickly
+- regret/bound ratio grows polynomially
+- empirical constant exceeds audit ceiling

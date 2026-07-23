@@ -1,0 +1,10 @@
+denominator,name,numerator
+4,profit_max_beta,3
+4,profit_max_T_over_K,3
+8,profit_max_sqrt_KT,5
+4,exploration_rounds_NK,3
+4,discretization_T_over_K,3
+4,bias_error_T_over_sqrt_N,3
+4,bandit_K_sqrt_T,3
+4,budget_exploration_NK,3
+4,budget_bandit_shortfall,3

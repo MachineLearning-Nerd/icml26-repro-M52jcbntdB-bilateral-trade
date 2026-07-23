@@ -1,0 +1,143 @@
+{
+  "actions": [
+    {
+      "gft": 0,
+      "p": 0.0,
+      "profit": 0.0,
+      "q": 0.0,
+      "traded": []
+    },
+    {
+      "gft": 0.0625,
+      "p": 0.125,
+      "profit": 0.0625,
+      "q": 0.375,
+      "traded": [
+        "A"
+      ]
+    },
+    {
+      "gft": 0.0625,
+      "p": 0.37493896484375,
+      "profit": 0.0,
+      "q": 0.37493896484375,
+      "traded": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "gft": 0.0625,
+      "p": 0.62493896484375,
+      "profit": -0.1875,
+      "q": 0.37493896484375,
+      "traded": [
+        "A",
+        "C",
+        "D"
+      ]
+    },
+    {
+      "gft": 0.0625,
+      "p": 0.62493896484375,
+      "profit": -0.124969482421875,
+      "q": 0.375,
+      "traded": [
+        "A",
+        "D"
+      ]
+    },
+    {
+      "gft": 0.0,
+      "p": 0.62493896484375,
+      "profit": 0.0,
+      "q": 0.62493896484375,
+      "traded": [
+        "D"
+      ]
+    },
+    {
+      "gft": 0.125,
+      "p": 0.625,
+      "profit": -0.25006103515625,
+      "q": 0.37493896484375,
+      "traded": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    {
+      "gft": 0.125,
+      "p": 0.625,
+      "profit": -0.1875,
+      "q": 0.375,
+      "traded": [
+        "A",
+        "B",
+        "D"
+      ]
+    },
+    {
+      "gft": 0.0625,
+      "p": 0.625,
+      "profit": -3.0517578125e-05,
+      "q": 0.62493896484375,
+      "traded": [
+        "B",
+        "D"
+      ]
+    },
+    {
+      "gft": 0.0625,
+      "p": 0.625,
+      "profit": 0.0625,
+      "q": 0.875,
+      "traded": [
+        "B"
+      ]
+    }
+  ],
+  "constant_gap": 0.005211193832509509,
+  "construction": "appendix_literal_minus_epsilon",
+  "distinct_needles": true,
+  "epsilon_audit": 6.103515625e-05,
+  "needle_action": null,
+  "needle_gft": null,
+  "needle_profit": null,
+  "no_needle_gbb": 0.07812213950082382,
+  "optimal_gbb": 0.08333333333333333,
+  "packing_certificates": [
+    {
+      "T": 8,
+      "epsilon": 5.960464477539063e-08,
+      "history_count": 65536,
+      "identification_success_upper": 0.125,
+      "packed_instances": 524288
+    },
+    {
+      "T": 16,
+      "epsilon": 9.094947017729282e-13,
+      "history_count": 4294967296,
+      "identification_success_upper": 0.125,
+      "packed_instances": 34359738368
+    },
+    {
+      "T": 32,
+      "epsilon": 2.117582368135751e-22,
+      "history_count": 18446744073709551616,
+      "identification_success_upper": 0.125,
+      "packed_instances": 147573952589676412928
+    },
+    {
+      "T": 64,
+      "epsilon": 1.1479437019748901e-41,
+      "history_count": 340282366920938463463374607431768211456,
+      "identification_success_upper": 0.125,
+      "packed_instances": 2722258935367507707706996859454145691648
+    }
+  ],
+  "source_deviation": "Uses the +epsilon fourth atom shown in Figure 1 and the price-swapped Region I required by the Section 2 convention. The appendix-literal -epsilon form is tested as the negative control.",
+  "universal_argument": "Yao packing: deterministic learners have at most 4^T two-bit feedback histories. Pack 8*4^T disjoint width-epsilon needles; each history's next action can enter at most one. Uniform random instance therefore has identification probability at most 1/8, and the exact LP gap turns missed needle rounds into constant expected regret."
+}

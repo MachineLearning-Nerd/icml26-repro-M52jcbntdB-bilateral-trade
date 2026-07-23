@@ -1,0 +1,25 @@
+{
+  "compute": "local CPU",
+  "deterministic_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "fixed_command": "uv sync --frozen && .venv/bin/python repro/src/verify_bt.py",
+  "git_sha": "d171f3cc28c2a117061697e79fc09110008f40ab",
+  "logical_cpus": 8,
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "processor": "arm",
+  "python": "3.12.11",
+  "runtime_seconds": 43.95988762495108,
+  "uv_lock_sha256": "1d77f95cbcb8b4b5af68ca69dcbabfd8a4c05619eae83604c0caed054227dce1"
+}

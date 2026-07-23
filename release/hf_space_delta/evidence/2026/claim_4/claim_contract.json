@@ -1,0 +1,9 @@
+{
+  "requirements": [
+    "four horizons spanning >=64x and >=12 seeds",
+    "target beta is measured and reached in every conditional trial",
+    "phase regret/bound ratio has no polynomial growth",
+    "negative control is rejected"
+  ],
+  "verdict_if_pass": "VERIFIED"
+}

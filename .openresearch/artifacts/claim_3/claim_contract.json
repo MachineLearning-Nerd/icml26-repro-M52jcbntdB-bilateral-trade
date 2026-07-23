@@ -1,0 +1,9 @@
+{
+  "requirements": [
+    "three bounded-density environments and nested K through 257",
+    "no Lemma 5.1 directed-projection violation",
+    "isolated comparator gap stays within a paper-derived log(T)/K envelope",
+    "gap log-log slope <=-0.70 and nested optimum is monotone"
+  ],
+  "verdict_if_pass": "VERIFIED"
+}

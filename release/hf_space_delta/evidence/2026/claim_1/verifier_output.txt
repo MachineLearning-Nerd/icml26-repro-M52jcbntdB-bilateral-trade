@@ -1,0 +1,5 @@
+exit_code=1
+CLAIM 1 VERIFIER: FAIL
+- Appendix F does not prove the Profit-Max nontermination case
+- Appendix C omits the promised proof of Lemma 7.2
+- Theorem confidence accounting does not preserve total delta

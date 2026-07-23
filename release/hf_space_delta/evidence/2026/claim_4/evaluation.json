@@ -1,0 +1,8 @@
+{
+  "claim": 4,
+  "independent_checker_exit": 0,
+  "negative_control_verifier_exit": 1,
+  "primary_verifier_exit": 0,
+  "runtime_seconds": 44.96711158298422,
+  "verdict": "VERIFIED"
+}

@@ -1,0 +1,9 @@
+{
+  "requirements": [
+    "intended needle has GFT 1/8 and negative expected profit",
+    "exact GBB LP has a constant >=1/200 gap when needle actions are removed",
+    "feedback-history packing gives identification success <=1/8",
+    "appendix-literal negative control is rejected"
+  ],
+  "verdict_if_pass": "VERIFIED"
+}

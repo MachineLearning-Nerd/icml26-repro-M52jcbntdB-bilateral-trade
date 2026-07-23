@@ -1,0 +1,18 @@
+{
+  "rows": [
+    {
+      "K": 16,
+      "N": 512,
+      "bound": 0.13924464250769783,
+      "delta": 0.05,
+      "environment": "uniform",
+      "estimated_cells": 256,
+      "failure_count": 128,
+      "failure_probability_ci95_high": 1.0,
+      "identity_max_abs_error": 0.25,
+      "max_observed_error": 0.076171875,
+      "rounds": 16384,
+      "trials": 128
+    }
+  ]
+}

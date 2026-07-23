@@ -1,0 +1,6 @@
+exit_code=1
+CLAIM 5 VERIFIER: FAIL
+- insufficient K,N configurations
+- sample-reuse sweep stops below K=32
+- simultaneous error guarantee not supported
+- GFT=L+R+PRO identity failed

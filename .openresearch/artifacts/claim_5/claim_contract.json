@@ -1,0 +1,9 @@
+{
+  "requirements": [
+    "all K^2 cells estimated in exactly 2KN rounds",
+    "K reaches 32 and each configuration has >=128 trials",
+    "95% upper confidence on simultaneous failure probability <=delta",
+    "GFT=L+R+PRO identity holds to 1e-12"
+  ],
+  "verdict_if_pass": "VERIFIED"
+}

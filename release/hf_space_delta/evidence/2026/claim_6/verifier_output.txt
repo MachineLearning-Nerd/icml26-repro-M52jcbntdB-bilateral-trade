@@ -1,0 +1,2 @@
+exit_code=0
+CLAIM 6 VERIFIER: PASS
