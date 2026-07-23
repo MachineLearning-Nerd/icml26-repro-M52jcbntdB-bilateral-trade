@@ -6,4 +6,6 @@ passes are toy/proxy checks and correspond to the live judge's 2/12 assessment;
 they are not current claim verdicts.
 
 `verdict_2026.json` is the cumulative claim-by-claim outcome backed by the text
-artifacts under `.openresearch/artifacts/`.
+artifacts under `.openresearch/artifacts/`. It records the published Space
+revision and the separate, still-pending judge revision; it does not claim a
+live score increase.

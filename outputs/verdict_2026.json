@@ -43,5 +43,9 @@
     }
   },
   "live_score_claimed": false,
-  "published": false
+  "published": true,
+  "published_at_utc": "2026-07-23T15:22:42Z",
+  "published_hf_revision": "4c4e95f577956c896d3286ae303237b856f5ae6d",
+  "current_judge_head": "a3bd9c2e315f02cb584c634c58036238f87289f5",
+  "publication_status": "awaiting_judge"
 }
