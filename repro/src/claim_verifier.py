@@ -24,30 +24,42 @@ def finite(value: object) -> bool:
 
 
 def verify_claim_1(data: dict, failures: list[str]) -> None:
-    rows = data["rows"]
-    summaries = data["summaries"]
-    horizons = sorted({int(row["T"]) for row in rows})
-    seeds = sorted({int(row["seed"]) for row in rows})
-    require(len(horizons) >= 4, "need at least four horizons", failures)
-    require(max(horizons) >= 131_072, "maximum horizon below 131072", failures)
-    require(max(horizons) / min(horizons) >= 64, "horizon span below 64x", failures)
-    require(len(seeds) >= 12, "fewer than 12 deterministic seeds", failures)
-    require(all(row["phase1_stopped"] for row in rows), "Profit-Max did not stop", failures)
-    require(all(row["phase2_complete"] for row in rows), "exploration did not finish", failures)
-    require(all(row["gbb"] for row in rows), "realized GBB violation", failures)
+    dependencies = data["dependencies"]
     require(
-        all(int(row["phase1_rounds"]) + 2 * int(row["K"]) * int(row["N"]) + int(row["phase3_rounds"]) == int(row["T"]) for row in rows),
-        "phase round accounting mismatch",
+        all(dependencies[str(claim)]["verdict"] == "VERIFIED" for claim in (3, 4, 5, 6)),
+        "one or more component claim gates are not VERIFIED",
         failures,
     )
-    slope = data["regret_scaling"]
-    require(finite(slope["estimate"]), "non-finite regret exponent", failures)
-    require(float(slope["estimate"]) <= 0.90, "regret exponent exceeds 0.90", failures)
-    require(float(slope["ci95_high"]) <= 1.00, "regret exponent CI includes linear growth", failures)
+    exponents = [
+        float(row["numerator"]) / float(row["denominator"])
+        for row in data["appendix_f_terms"]
+    ]
+    claimed = (
+        float(data["claimed_max_exponent"][0])
+        / float(data["claimed_max_exponent"][1])
+    )
+    require(max(exponents) <= 0.75, "composition contains a term above T^(3/4)", failures)
+    require(abs(max(exponents) - claimed) <= 1e-15, "claimed maximum exponent is wrong", failures)
+    obligations = data["source_obligations"]
     require(
-        float(summaries[-1]["mean_regret_over_T"])
-        < float(summaries[0]["mean_regret_over_T"]),
-        "regret/T did not decrease",
+        obligations["profit_max_nontermination_case_proved"],
+        "Appendix F does not prove the Profit-Max nontermination case",
+        failures,
+    )
+    require(
+        obligations["lemma_7_2_proof_present"],
+        "Appendix C omits the promised proof of Lemma 7.2",
+        failures,
+    )
+    require(
+        obligations["confidence_events_allocated_to_total_delta"],
+        "Theorem confidence accounting does not preserve total delta",
+        failures,
+    )
+    diagnostic = data["finite_regime_diagnostic"]
+    require(
+        diagnostic["interpretation"].startswith("Finite-regime diagnostic only"),
+        "failed finite rollout was promoted beyond its scope",
         failures,
     )
 

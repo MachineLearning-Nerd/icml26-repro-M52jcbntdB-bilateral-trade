@@ -23,16 +23,25 @@ def slope(xs: list[float], ys: list[float]) -> float:
 
 
 def check_1(data: dict) -> None:
-    grouped: dict[int, list[float]] = {}
-    for row in data["rows"]:
-        grouped.setdefault(int(row["T"]), []).append(float(row["regret"]))
-        if float(row["cumulative_profit"]) < -1e-9:
-            fail("independent GBB check failed")
-    xs = sorted(grouped)
-    ys = [float(np.mean(grouped[x])) for x in xs]
-    observed = slope(xs, ys)
-    if abs(observed - float(data["regret_scaling"]["estimate"])) > 1e-9:
-        fail("serialized slope does not recompute")
+    terms = data["appendix_f_terms"]
+    exponents = [
+        int(row["numerator"]) / int(row["denominator"]) for row in terms
+    ]
+    claimed = (
+        int(data["claimed_max_exponent"][0])
+        / int(data["claimed_max_exponent"][1])
+    )
+    if not math.isclose(max(exponents), claimed, abs_tol=1e-15):
+        fail("Appendix-F maximum exponent does not recompute")
+    diagnostic = data["finite_regime_diagnostic"]
+    observed = slope(diagnostic["horizons"], diagnostic["mean_regret"])
+    if abs(observed - float(diagnostic["regret_exponent"])) > 1e-12:
+        fail("finite-regime slope does not recompute")
+    if diagnostic["all_profit_max_stopped"] or diagnostic["all_exploration_finished"]:
+        fail("finite diagnostic contradicts the preserved parent run")
+    obligations = data["source_obligations"]
+    if any(obligations.values()):
+        fail("serialized source audit incorrectly marks an obligation discharged")
 
 
 def check_2(data: dict) -> None:
