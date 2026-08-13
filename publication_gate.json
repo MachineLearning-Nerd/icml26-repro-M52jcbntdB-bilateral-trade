@@ -1,26 +1,37 @@
 {
-  "paper": "M52jcbntdB",
-  "arxiv": "2602.05681",
-  "current_live_score": "2/12",
-  "current_hf_head": "4c4e95f577956c896d3286ae303237b856f5ae6d",
-  "current_judge_head": "a3bd9c2e315f02cb584c634c58036238f87289f5",
-  "claims_total": 6,
+  "repository": "MachineLearning-Nerd/icml26-online-bilateral-trade",
+  "paper": {
+    "title": "A Stronger Benchmark for Online Bilateral Trade: From Fixed Prices to Distributions",
+    "arxiv": "2602.05681v1",
+    "openreview": "M52jcbntdB",
+    "authors": [
+      "Anna Lunghi",
+      "Mattia Piccinato",
+      "Matteo Castiglioni",
+      "Alberto Marchesi"
+    ]
+  },
+  "claim_verdicts": {
+    "1": "BLOCKED",
+    "2": "VERIFIED_WITH_DISCLOSED_SOURCE_REPAIR",
+    "3": "VERIFIED_SCOPED",
+    "4": "VERIFIED_SCOPED",
+    "5": "VERIFIED_SCOPED",
+    "6": "VERIFIED_SCOPED"
+  },
   "claims_verified": 5,
-  "claims_falsified": 0,
   "claims_blocked": 1,
-  "cumulative_regression_passed": true,
-  "negative_controls_rejected": true,
-  "independent_checks_passed": true,
-  "protected_pages_unchanged": true,
+  "claims_falsified": 0,
+  "evidence_release_gate_passed": true,
+  "publication_gate_passed": false,
+  "release_status": "awaiting_live_judge",
+  "candidate_published": true,
+  "candidate_judged": false,
   "candidate_text_only": true,
-  "candidate_json_valid": true,
-  "secret_scan_passed": true,
-  "publication_gate_passed": true,
-  "published": true,
-  "published_at_utc": "2026-07-23T15:22:42Z",
-  "published_text_file_count": 94,
+  "current_live_score": "2/12",
+  "previous_hf_revision": "a3bd9c2e315f02cb584c634c58036238f87289f5",
   "published_hf_revision": "4c4e95f577956c896d3286ae303237b856f5ae6d",
-  "publication_status": "awaiting_judge",
-  "awaiting_judge": true,
-  "explicit_approval_required": false
+  "published_text_file_count": 94,
+  "claimed_score_increase": false,
+  "huggingface_compute_used": false
 }

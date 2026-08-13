@@ -1,11 +1,18 @@
 # Output provenance
 
-`verdict.json` is the immutable legacy output from the judged baseline harness.
-It is preserved because deleting prior evidence is prohibited. Its six boolean
-passes are toy/proxy checks and correspond to the live judge's 2/12 assessment;
-they are not current claim verdicts.
+The root verdict files are retained as historical evidence from the original
+judged baseline. Their six boolean passes were toy/proxy checks and correspond
+to the live judge's 2/12 assessment; they are not the current claim verdicts.
 
-`verdict_2026.json` is the cumulative claim-by-claim outcome backed by the text
-artifacts under `.openresearch/artifacts/`. It records the published Space
-revision and the separate, still-pending judge revision; it does not claim a
-live score increase.
+The current claim-by-claim evidence is authoritative under:
+
+- .openresearch/artifacts/campaign_summary.json
+- .openresearch/artifacts/claim_1/ through claim_6/
+- GATE_READY.md
+- publication_gate.json
+
+Recreate the formal evidence with:
+
+~~~text
+uv sync --frozen && .venv/bin/python repro/src/verify_bt.py
+~~~

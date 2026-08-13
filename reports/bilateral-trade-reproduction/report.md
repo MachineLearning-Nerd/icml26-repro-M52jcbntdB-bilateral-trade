@@ -90,11 +90,11 @@ The finite experiment reinforces the block without falsifying the asymptotic sta
 
 The important branches are:
 
-- [`orx/frozen-judged-baseline`](https://github.com/MachineLearning-Nerd/icml26-repro-M52jcbntdB-bilateral-trade/tree/orx/frozen-judged-baseline): immutable reproduction of the judged toy harness.
-- [`orx/faithful-claim-contracts-and-phase-implementatio`](https://github.com/MachineLearning-Nerd/icml26-repro-M52jcbntdB-bilateral-trade/tree/orx/faithful-claim-contracts-and-phase-implementatio): first direct implementations; exposed invalid Claim 3 and 4 contracts.
-- [`orx/feasible-projection-audit-and-asymptotic-phase-c`](https://github.com/MachineLearning-Nerd/icml26-repro-M52jcbntdB-bilateral-trade/tree/orx/feasible-projection-audit-and-asymptotic-phase-c): verified Claims 2–6 and preserved the failed million-round theorem diagnostic.
-- [`orx/compositional-theorem-4-1-certificate`](https://github.com/MachineLearning-Nerd/icml26-repro-M52jcbntdB-bilateral-trade/tree/orx/compositional-theorem-4-1-certificate): winning cumulative evidence node; formalizes why Claim 1 is BLOCKED.
-- [`orx/release-candidate-report-and-preserved-logbook`](https://github.com/MachineLearning-Nerd/icml26-repro-M52jcbntdB-bilateral-trade/tree/orx/release-candidate-report-and-preserved-logbook): final cumulative regression and the byte-manifested text-only Space package.
++- [`research/frozen-judged-baseline`](https://github.com/MachineLearning-Nerd/icml26-online-bilateral-trade/tree/research/frozen-judged-baseline): immutable reproduction of the judged toy harness.
++- [`research/faithful-claim-contracts`](https://github.com/MachineLearning-Nerd/icml26-online-bilateral-trade/tree/research/faithful-claim-contracts): first direct implementations; exposed invalid Claim 3 and 4 contracts.
++- [`research/feasible-projection-phase`](https://github.com/MachineLearning-Nerd/icml26-online-bilateral-trade/tree/research/feasible-projection-phase): verified Claims 2–6 and preserved the failed million-round theorem diagnostic.
++- [`research/theorem-4-1-proof-gaps`](https://github.com/MachineLearning-Nerd/icml26-online-bilateral-trade/tree/research/theorem-4-1-proof-gaps): winning cumulative evidence node; formalizes why Claim 1 is BLOCKED.
++- [`release/candidate-report`](https://github.com/MachineLearning-Nerd/icml26-online-bilateral-trade/tree/release/candidate-report): final cumulative regression and the byte-manifested text-only Space package.
 
 All raw evidence is under `.openresearch/artifacts/claim_1` through `claim_6`. Figures regenerate with:
 
